@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+絶起証明書ジェネレータ
+{% endblock %}
+{% block contents %}
+<h1 class="border-bottom-0">絶起証明書を作る</h1>
+<p>以下のフォームに必要事項を入力してください。「本来の予定」および「絶起の理由」は空欄でも大丈夫です。</p>
+<form action="./" method="post" enctype="multipart/form-data" name="createform">
+        <div class="form-group row">
+            <label for="name" class="col-2 col-form-label">名前</label>
+            <div class="col-10">
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="schdate" class="col-2 col-form-label">起床予定日時</label>
+            <div class="col-10">
+                <input type="date" id="schdate" name="schdate" class="form-control">
+                <input type="time" id="schtime" name="schtime" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="getupdate" class="col-2 col-form-label">起床日時</label>
+            <div class="col-10">
+            <input type="date" id="getupdate" name="getupdate" class="form-control">
+            <input type="time" id="getuptime" name="getuptime" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="schdetail" class="col-2 col-form-label">本来の予定</label>
+            <div class="col-10">
+                <textarea class="form-control" rows="5" id="schdetail" name="schdetail">ここに記入してください</textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="schdetail" class="col-2 col-form-label">絶起の理由</label>
+            <div class="col-10">
+                <textarea class="form-control" rows="5" id="reason" name="reason">ここに記入してください</textarea>
+            </div>
+        </div>
+            <input type="submit" class="form-control">
+    </form>
+{% endblock %}
