@@ -96,4 +96,4 @@ def main():
 
 if __name__ == "__main__":
     # localhost:8080 で公開するように実行
-    run(host="localhost", port=8080, debug=True, reloader=True)
+    run(host="localhost", port=10000, debug=True, reloader=True)
