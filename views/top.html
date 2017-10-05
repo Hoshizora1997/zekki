@@ -3,8 +3,24 @@
 {% block title %}
 絶起証明書ジェネレータ
 {% endblock %}
+
+{% block headmeta %}
+<meta name="description" content="絶起したことを証明する証明書発行ジョークサイト　作成者：佐藤大哲（@SatoDaitetsu）">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="絶起証明書ジェネレータ">
+<meta property="og:url" content="http://zekki.tnet.jp">
+<meta property="og:site_name" content="絶起証明書ジェネレータ">
+<meta property="og:description" content="絶起したことを証明する証明書発行ジョークサイト　作成者：佐藤大哲（@SatoDaitetsu）">
+<meta property="og:image" content="http://www.nikuyake.com/img/cover.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@SatoDaitetsu">
+<meta name="twitter:creator" content="@SatoDaitetsu">
+{% endblock %}
+
 {% block contents %}
-<h1 class="border-bottom-0">絶起証明書を作る</h1>
+<h1>絶起証明書を作る</h1>
 <p>以下のフォームに必要事項を入力してください。「本来の予定」および「絶起の理由」は空欄でも大丈夫です。</p>
 <form action="./" method="post" enctype="multipart/form-data" name="createform">
         <div class="form-group row">

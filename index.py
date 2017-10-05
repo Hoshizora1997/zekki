@@ -79,15 +79,23 @@ def main():
     tempImgDraw.text((320, 2700), nowtime, font=font2, fill='#000')
 
     # 保存するファイル名を生成（uuid4を用いたランダム生成）
-    filename = str(uuid.uuid4()).replace('-', '') + '.jpg'
+    filename = str(uuid.uuid4()).replace('-', '')
 
     # 保存
-    tempImg.save('./data/'+filename, 'JPEG', quality=100, optimize=True)
+    tempImg.save('./data/'+filename+'.jpg', 'JPEG', quality=100, optimize=True)
 
-    # 生成された画像を返す
-    return redirect('./data/'+filename)
+    return redirect('./userdata?id='+filename,)
 
+@get('/userdata')
+def userdata():
+    id = request.query.get('id')
 
+    contents = {
+        "imgpath":'/data/'+id+'.jpg',
+        "id":id,
+    }
+
+    return template('complete',contents)
 
 
 

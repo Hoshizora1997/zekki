@@ -1,22 +1,44 @@
 {% extends "base.html" %}
 
 {% block title %}
-絶起証明書ジェネレータ
+発行済証明書｜絶起証明書ジェネレータ
 {% endblock %}
+
+{% block headmeta %}
+<meta name="description" content="絶起したことを証明する証明書発行ジョークサイト　作成者：佐藤大哲（@SatoDaitetsu）">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="発行済証明書">
+<meta property="og:url" content="http://zekki.tnet.jp">
+<meta property="og:site_name" content="絶起証明書ジェネレータ">
+<meta property="og:description" content="絶起したことを証明する証明書発行ジョークサイト　作成者：佐藤大哲（@SatoDaitetsu）">
+<meta property="og:image" content="http://zekki.tnet.jp/{{imgpath}}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@SatoDaitetsu">
+<meta name="twitter:creator" content="@SatoDaitetsu">
+{% endblock %}
+
 {% block contents %}
-<h1 class="border-bottom-0">発行完了</h1>
+<h1>発行完了</h1>
 <div class="row">
     <div class="col-sm-6">
-        <img src="{{imgpath}}" class="img-fluid">
+        <img src=".{{imgpath}}" class="img-fluid" alt="ユーザ画像">
+        <hr class="hidden-sm-up">
     </div>
     <div class="col-sm-6">
         <div class="card card-inverse card-danger text-center">
             <div class="card-block">
                 <div class="card-blockquote">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <p>この証明書はフィクション・ジョークです。決して現実世界で行使しないようにしてください。</p>
+                    <p>使用により何らかの被害・損害を被ったとしても、当サイトの運営者は一切責任を負いません。</p>
                 </div>
             </div>
         </div>
+        <hr>
+        <a class="btn btn-block btn-success" href=".{{imgpath}}">画像をダウンロードする</a>
+        <a class="btn btn-block btn-primary" href="https://twitter.com/intent/tweet?text=絶起証明書を発行しました%0a改行もできるし%20スペースも&url=http://zekki.tnet.jp/userdata?id={{id}}&hashtags=絶起証明書" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">画像をツイートする</a>
+        <a class="btn btn-block" href="./">新しく作り直す</a>
     </div>
 </div>
 {% endblock %}
